@@ -56,6 +56,36 @@
     <artifactId>jaxb-api</artifactId>
     <version>2.3.1</version>
 </dependency>
+
+<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+<dependency>
+    <groupId>org.hibernate.javax.persistence</groupId>
+    <artifactId>hibernate-jpa-2.1-api</artifactId>
+    <version>1.0.0.Final</version>
+</dependency>
+
+
+       <dependency>
+       	<groupId>org.hibernate</groupId>
+       	<artifactId>hibernate-core</artifactId>
+       	<version>5.4.27.Final</version>
+       </dependency>
+       
+       <dependency>
+       	<groupId>mysql</groupId>
+       	<artifactId>mysql-connector-java</artifactId>
+       	<version>8.0.21</version>
+       </dependency>
+       
+       <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.22</version>
+    <scope>provided</scope>
+</dependency>
+
+
     </dependencies>
     <properties>
         <jersey.version>2.9</jersey.version>
