@@ -8,12 +8,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @XmlRootElement
 @Entity
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Personne {
 	
 	@Id
