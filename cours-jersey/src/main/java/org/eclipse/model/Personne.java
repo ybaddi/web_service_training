@@ -19,9 +19,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@XmlRootElement(name="item")
-@XmlType(propOrder= {"id", "firstname","secondname", "age"})
-@Entity()
+@XmlRootElement
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

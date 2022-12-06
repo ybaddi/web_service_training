@@ -36,10 +36,14 @@ public class PersonneResource {
      * @return String that will be returned as a text/plain response.
      */
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(
+    	{ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML }
+    	)
     public List<Personne> getPersonnes() {
-       
-       return pDao.findAll();
+       System.out.print("hello");
+       List<Personne> personnes = pDao.findAll();
+       System.out.print("\n hello2");
+       return personnes;
        
     }
     
@@ -53,8 +57,8 @@ public class PersonneResource {
     }
     
     @POST
-    @Consumes(MediaType.APPLICATION_XML) 
-    @Produces(MediaType.APPLICATION_XML)
+    @Consumes(MediaType.APPLICATION_JSON) 
+    @Produces(MediaType.APPLICATION_JSON)
     public Personne addPersonne(Personne p) throws Exception {
        Integer id = pDao.save(p);
        p.setId(id);
@@ -63,8 +67,8 @@ public class PersonneResource {
     }
     
     @PUT
-    @Consumes(MediaType.APPLICATION_XML) 
-    @Produces(MediaType.APPLICATION_XML)
+    @Consumes(MediaType.APPLICATION_JSON) 
+    @Produces(MediaType.APPLICATION_JSON)
     public Personne editPersonne(
     		Personne p) throws Exception {
        pDao.update(p);
@@ -73,8 +77,8 @@ public class PersonneResource {
     }
     
     @DELETE
-    @Consumes(MediaType.APPLICATION_XML) 
-    @Produces(MediaType.APPLICATION_XML)
+    @Consumes(MediaType.APPLICATION_JSON) 
+    @Produces(MediaType.APPLICATION_JSON)
     @Path(value = "/{id}")
     public Personne deletePersonne(
     		@PathParam(value="id") int id) throws Exception {
@@ -84,7 +88,7 @@ public class PersonneResource {
     
     
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     @Path(value = "/findBy")
     public List<Personne> getPersonneWhere(
     		@DefaultValue("0")

@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 
 
 @XmlRootElement
-@Entity
-@Data
+//@Entity
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Address {
