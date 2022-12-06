@@ -48,16 +48,21 @@ public class GenericDao<T,P> {
 	}
 	
 	
-	public void delete(T obj){
+	public T delete(int id){
 		Transaction tx = null;
+		T obj = null;
 		try {
 		tx =session.beginTransaction();
-		session.delete(obj);
+		obj = findById(id);
+		if(obj!=null)session.delete(obj);
 		tx.commit();
 		}catch(Exception e) {
 			if(tx != null) tx.rollback();
 			throw e;
 		}
+		
+		
+		return obj;
 	}
 	
 	public T  findById(int id){
