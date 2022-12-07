@@ -11,6 +11,6 @@
     <property name="hibernate.show_sql">true</property>
     <property name="show_sql">true</property>
     <mapping class="org.eclipse.model.Personne"/>    
-    <mapping class="org.eclipse.model.Address"/>
+    <mapping class="org.eclipse.model.Adresse"/>
   </session-factory>
 </hibernate-configuration>
