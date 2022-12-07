@@ -1,0 +1,47 @@
+<p>personnes works!</p>
+<!--<table>-->
+<!--  <tr *ngFor="let x of personnes">-->
+<!--    <td>{{ x.id }}</td>-->
+<!--    <td>{{ x.firstname }}</td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<button routerLink="/personnes/add" > add </button>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="firstname">
+    <th mat-header-cell *matHeaderCellDef> Firstname </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="secondname">
+    <th mat-header-cell *matHeaderCellDef> Secondname </th>
+    <td mat-cell *matCellDef="let element"> {{element.secondname}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef> Age </th>
+    <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element"> <button > edit </button> </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</mat-table>

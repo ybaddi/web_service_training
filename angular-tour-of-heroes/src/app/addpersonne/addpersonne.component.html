@@ -1,0 +1,13 @@
+<p>addpersonne works!</p>
+
+
+<form #personneForm="ngForm"
+      (ngSubmit)="addPersonne(personneForm.value)">
+
+  <input type="text" name="firstname" ngModel id="firstname">
+  <input type="text" name="secondname" ngModel id="firstname">
+  <input type="number" name="age" ngModel id="firstname">
+
+  <button>submit</button>
+
+</form>
